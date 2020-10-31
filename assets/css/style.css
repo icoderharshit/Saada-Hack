@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,500');
+html,body{
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    margin: 0;
+    width: 100%;
+
+}
+body{
+    background-color: white;
+    font-family: 'Roboto', sans-serif;
+}
+
+#navbar li{
+    text-transform: uppercase;
+    margin-right:30px;
+    font-size: 16px;
+    font-family: 'Raleway', Arial, sans-serif;
+    letter-spacing: 3px;
+} 
+.navbar-light .navbar-nav .nav-link:hover{
+    color: rgb(39, 39, 39) !important;
+font-weight: 600;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #f84949;
+    font-weight: 500;
+}
+
+.down-arrow{
+    margin-top: 50px;
+    height: 100px;
+    width: 100px;
+display: block;
+}
+.about{
+    margin-top: auto;
+    height: 90vh;
+}
+.down-arrow:hover{
+    cursor: pointer;
+}
+
+#navbar{
+  
+    transition: ease-in 0.3s;
+}
+
+.nav-black{
+background-color:#f84949 ; 
+box-shadow: 0px 0px 8px gray;
+color: #000;
+}
+.nav-normal{
+    background-color: transparent;
+}
+.heading{
+    margin-top: 10% ;
+    }
+
+    .banner-text{
+        margin-left: 4%;
+        width: 90%;
+    }
+#ab .card{
+border: none;
+}
+main{
+    margin-top: 50px;
+    height: 100vh;
+}
+
+.card-title{
+    font-size: 25px;
+}
+
+.collapse{
+    width: 100% !important;
+}
+.nav-white{
+    color: white !important;
+}
+@media(max-width:768px){
+    .navbarsm{
+    background-color: rgb(255, 255, 255);
+    }
+    }
+    @media(max-width:996px)&& (min-width:564px){
+#ab img{
+    margin-top: 10%;
+}
+    }
+    .register-art{
+      
+        background-image: url(/assets/images/register.jpg);
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center;
+
+    }
+    .reg-head{
+        background-color: #e95f78;
+        color: white;
+        text-transform: uppercase ;
+        letter-spacing: 3px;
+        font-family: 'Raleway', Arial, sans-serif;
+        margin-bottom: 30px;
+        border: 1px solid grey;
+        width: max-content;
+        margin:0 auto 0 auto;
+    margin-bottom: 12px;
+    }
+    .regform input[type="text"],.regform input[type="email"],.regform input[type="tel"],.regform input[type="date"], textarea{
+        border: none;
+        background-color: transparent;
+        outline: none;
+        border-bottom: 2px solid grey;
+        width: 600px;
+        letter-spacing: 1px;
+    }
+    /* .regform input[type="radio"]:nth-child(1){
+        margin-left: 0px;
+    } */
+    .regform input[type="radio"]{
+        margin-left: 18px;
+        margin-right: 5px;
+    }
+    label{
+        padding-top: 2%;
+    }   
+    .regform input[type="text"]:focus,.regform input[type="email"]:focus,.regform input[type="tel"]:focus,.regform input[type="date"]:focus, textarea:focus{
+        border-bottom: 2px solid  #dd7d8e;
+        
+    }
+    .regform{
+        padding-left:50px;
+        font-size: 15px;
+        font-family: 'Roboto', sans-serif;
+      
+    }
+    @media (max-width:768px){
+        .regform input[type="text"],.regform input[type="email"],.regform input[type="tel"],.regform input[type="date"], textarea{
+         width: 400px;
+         
+        color: #000 !important;
+        height: 40px;
+        }
+margin-left:0;
+        ::placeholder,label{
+            opacity: 1;
+            color: rgb(29, 29, 29) !important;
+        }
+        .reg-head{
+            margin-left: 0px;
+        }
+        .regform{
+          
+            margin-top: 10px;
+
+            background-image: url(/assets/images/register.jpg);
+        }
+        .regform input[type="radio"]{
+            margin-left: 40px !important;
+            margin-right: 5px;
+        }
+        .regform input:focus,textarea:focus{
+            background-color: rgb(255, 255, 255);
+        }
+    }
+    /* for devices with width 768px-1330px*/
+@media (min-width: 769px) and (max-width: 992px){
+    .regform input[type="text"],.regform input[type="email"],.regform input[type="tel"],.regform input[type="date"], textarea{
+        width: 80vw;
+        margin-left: 3%;
+       color: #000 !important;
+       height: 40px;
+       }
+       .regform input[type="date"],.regform label
+       {
+           color:black !important;
+       }
+       
+       .regform input:focus,textarea:focus{
+        background-color: rgb(255, 255, 255);
+    }
+    ::placeholder{
+        color: #000;
+    }
+}
+@media (min-width:993px){
+    .regform input[type="text"],.regform input[type="email"],.regform input[type="tel"],.regform input[type="date"], textarea{
+        width: 40vw;
+        margin-left: 3%;
+       color: #000 !important;
+       height: 40px;
+       }
+       .regform input[type="date"]
+       {
+           color:grey !important;
+       }
+}
+.path-nav{
+  
+}
+.breadcrumb-item a{
+    color:rgb(36, 36, 36) ;
+}
+li.breadcrumb-item.active {
+    color:rgb(109, 108, 108) ;
+}
