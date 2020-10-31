@@ -94,7 +94,7 @@ main{
     }
     .register-art{
       
-        background-image: url(/assets/images/register.jpg);
+        background-image: url(/Saada-Hack/assets/images/register.jpg);
 background-size: cover;
 background-repeat: no-repeat;
 background-position: center;
@@ -159,7 +159,7 @@ margin-left:0;
           
             margin-top: 10px;
 
-            background-image: url(/assets/images/register.jpg);
+            background-image: url(/Saada-Hack/assets/images/register.jpg);
         }
         .regform input[type="radio"]{
             margin-left: 40px !important;
