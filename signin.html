@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <style>
+        body{
+            background-image: url(./assets/images/sign-in.png);
+        background-repeat: no-repeat;
+        height:630px;
+       
+        }
+     
+#box{
+    height:430px;
+    width: 450px;
+    background-color:rgb(255, 255, 255);
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 1.4%;  
+}
+#heading{
+    text-align: center;
+   padding-top: 20px;
+   font-family: "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif;
+   font-size:25px ;
+   display: block;
+   font-weight: 400;
+   margin-top:20% ;
+
+}
+button{
+    outline: none;
+    background-color: #f84949;
+    border-radius: 8px;
+    font-size:15px ;
+   height: 40px;
+   width: 130px;
+   letter-spacing: 2px;
+   border-color: transparent;
+}
+#font{
+    color: gray;
+    font-weight:200;
+    padding-left:25px;
+    font-family: "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif ;
+font-size: 15px;
+}
+#button{
+   font:center;
+   padding:40px;
+   text-align: center;
+   font-size: 15px;
+}
+
+input{
+    padding-left: 12px;
+    background-color: rgb(247, 247, 247);
+    border : wheat;
+    width: 370px;
+ margin-top: 10px ;
+ margin-bottom: 12px ;
+    height: 40px;
+    border-radius:5px;
+    font-size: 15px;
+    font-weight: 500;
+    color: rgb(109, 106, 106);
+}
+select{
+    padding-left: 12px;
+    background-color: rgb(247, 247, 247);
+    border : wheat;
+    width: 380px;
+ margin-top: 12px ;
+ margin-bottom: 12px ;
+    height: 44px;
+    border-radius:5px;
+    font-size: 15px;
+    font-weight: 500;
+    color: rgb(109, 106, 106);
+}
+
+
+#forgot{
+    float:right;
+    margin-right: 40px;
+    font-size: 14px;
+ font-family: "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif;
+ font-weight:400;
+}
+button:hover{
+    cursor: pointer;
+ background-color: white;
+ outline:1px solid #f84949;
+ color:#f84949 ;
+
+}
+
+input[type="text"]:focus{
+    outline: none;
+    border-bottom: 1px solid #f84949;
+
+}
+input[type="password"]:focus{
+    outline: none;
+    border-bottom: 1px solid #f84949;
+}
+
+
+    </style>
+</head>
+<body>
+    <form>
+<div id="box">
+     <div id="heading">
+    Sign In
+    </div>
+    <br>
+    <div id="font">
+       <label> Username</label>
+        <br>
+        <input type="text">
+        <br>
+        <!-- <label> Email</label>
+        <br>
+        <input type="text"> -->
+        
+      <label> Password</label> 
+        <br>
+        <input type="password">
+        <br>
+        <label>  Login as :</label> <br>
+       <select>
+        <option class="drop" value="volvo">Select</option>
+        <option class="drop" value="saab">Doctor</option>
+        <option class="drop" value="fiat">Chemist</option>
+        <option class="drop" value="audi">Patient</option>
+       </select>
+       <br>
+        <div id="forgot">
+        Forgot password ?
+        </div>
+    </div>
+        <div id="button">
+        <button> Sign In</button></div>
+       </div>
+    </form>
+</body>
+</html>
