@@ -114,7 +114,7 @@ input[type="password"]:focus{
 </head>
 <body>
    
-    <form>
+    
        
 <div id="box">
      <div id="heading">
@@ -122,9 +122,9 @@ input[type="password"]:focus{
     </div>
     <br>
     <div id="font">
-       <label> Username</label>
+       <label>Email</label>
         <br>
-        <input type="text">
+        <input type="text" id="email" name="email">
         <br>
         <!-- <label> Email</label>
         <br>
@@ -132,7 +132,7 @@ input[type="password"]:focus{
         
       <label> Password</label> 
         <br>
-        <input type="password">
+        <input type="password" id="password" name="password">
         <br>
         <label>  Login as :</label> <br>
        <select>
@@ -147,8 +147,44 @@ input[type="password"]:focus{
         </div>
     </div>
         <div id="button">
-        <button> Sign In</button></div>
+        <button onclick="LoginUser()"> Sign In</button></div>
        </div>
-    </form>
+    
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
+    <script>
+      var firebaseConfig = {
+         apiKey: "AIzaSyAs5tsHHmTFBKjTRSoJS42OJC13helmTq0",
+         authDomain: "saadahack.firebaseapp.com",
+         databaseURL: "https://saadahack.firebaseio.com",
+         projectId: "saadahack",
+         storageBucket: "saadahack.appspot.com",
+         messagingSenderId: "702033344107",
+         appId: "1:702033344107:web:01424d2231f7671e30632e",
+         measurementId: "G-D6K461P8SK"
+       };
+       // Initialize Firebase
+       firebase.initializeApp(firebaseConfig);
+    
+       function LoginUser(){
+   var email=document.getElementById('email').value;
+   var password=document.getElementById('password').value;
+   firebase.auth().signInWithEmailAndPassword(email,password).then(function(){
+alert("Logged in Successfuly !");
+
+    var id=firebase.auth().currentUser.uid;
+    window.location.replace("/Saada-Hack/profile.html");
+    localStorage.setItem('id',id);
+    
+   }).catch(function(error){
+
+    var errorCode=error.code;
+    var errorMsg=error.message;
+
+   });
+  }
+     
+     </script>
 </body>
 </html>

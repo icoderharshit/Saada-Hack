@@ -112,7 +112,7 @@ background-position: center;
         margin:0 auto 0 auto;
     margin-bottom: 12px;
     }
-    .regform input[type="text"],.regform input[type="email"],.regform input[type="tel"],.regform input[type="date"], textarea{
+    .regform input[type="text"],.regform input[type="email"],.regform input[type="tel"],.regform input[type="date"], textarea,.regform input[type="password"]{
         border: none;
         background-color: transparent;
         outline: none;
@@ -130,7 +130,7 @@ background-position: center;
     label{
         padding-top: 2%;
     }   
-    .regform input[type="text"]:focus,.regform input[type="email"]:focus,.regform input[type="tel"]:focus,.regform input[type="date"]:focus, textarea:focus{
+    .regform input[type="text"]:focus,.regform input[type="email"]:focus,.regform input[type="tel"]:focus,.regform input[type="date"]:focus, textarea:focus,.regform input[type="password"]:focus{
         border-bottom: 2px solid  #dd7d8e;
         
     }
@@ -141,7 +141,7 @@ background-position: center;
       
     }
     @media (max-width:768px){
-        .regform input[type="text"],.regform input[type="email"],.regform input[type="tel"],.regform input[type="date"], textarea{
+        .regform input[type="text"],.regform input[type="email"],.regform input[type="tel"],.regform input[type="date"], textarea,.regform input[type="password"]{
          width: 400px;
          
         color: #000 !important;
@@ -171,7 +171,7 @@ margin-left:0;
     }
     /* for devices with width 768px-1330px*/
 @media (min-width: 769px) and (max-width: 992px){
-    .regform input[type="text"],.regform input[type="email"],.regform input[type="tel"],.regform input[type="date"], textarea{
+    .regform input[type="text"],.regform input[type="email"],.regform input[type="tel"],.regform input[type="date"], textarea,.regform input[type="password"]{
         width: 80vw;
         margin-left: 3%;
        color: #000 !important;
@@ -190,7 +190,7 @@ margin-left:0;
     }
 }
 @media (min-width:993px){
-    .regform input[type="text"],.regform input[type="email"],.regform input[type="tel"],.regform input[type="date"], textarea{
+    .regform input[type="text"],.regform input[type="email"],.regform input[type="tel"],.regform input[type="date"], textarea,.regform input[type="password"]{
         width: 40vw;
         margin-left: 3%;
        color: #000 !important;
