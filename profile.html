@@ -60,7 +60,18 @@
   //  document.getElementById('state').innerHTML=state;
   //  document.getElementById('dob').innerHTML=dob;
   });
- 
+  const logOut = document.getElementById('logOut');
+  logOut.addEventListener('click', () => {
+    //signOut() is a built in firebase function responsible for signing a user out
+    auth.signOut()
+    .then(() => {
+        window.location.assign('/Saada-Hack/signin.html');
+    })
+    .catch(error => {
+        console.error(error);
+    })
+})
+
  </script>
  
 </body>
