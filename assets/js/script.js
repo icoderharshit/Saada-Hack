@@ -23,5 +23,5 @@ window.onscroll = function () {
     }
 };
 function send() {
-    document.getElementById('thanks').innerHTML = "We have received your message, " + document.getElementById('username') + ".";
+    document.getElementById('thanks').innerHTML = "We have received your message, " + document.getElementById('username').value + ".";
 }
