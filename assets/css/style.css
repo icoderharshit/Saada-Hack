@@ -29,18 +29,10 @@ font-weight: 600;
     font-weight: 500;
 }
 
-.down-arrow{
-    margin-top: 50px;
-    height: 100px;
-    width: 100px;
-display: block;
-}
+
 .about{
     margin-top: auto;
    
-}
-.down-arrow:hover{
-    cursor: pointer;
 }
 
 #navbar{
@@ -68,7 +60,7 @@ color: #000;
 border: none;
 }
 main{
-    margin-top: 50px;
+    margin-top: 100px;
     height: 100vh;
 }
 
