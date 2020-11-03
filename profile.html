@@ -6,14 +6,6 @@
 </head>
 <body>
  <h1>Profile Of User</h1>
-<!-- <h3 id="fname"></h3>
-<h3 id="lname"></h3>
-<h3 id="phone"></h3>
-<h3 id="address"></h3>
-<h3 id="gender"></h3>
-<h3 id="city"></h3>
-<h3 id="state"></h3>
-<h3 id="dob"></h3> -->
 <section class="container profile-container">
   <div>  
     <p>Welcome :</p>
@@ -38,10 +30,10 @@
     appId: "1:702033344107:web:01424d2231f7671e30632e",
     measurementId: "G-D6K461P8SK"
   };
-  // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
 </script>
 <script type="text/javascript">
+
   var userId=localStorage.getItem('id');
   firebase.database().ref('Users/'+userId).on('value',function(snapshot){
    var name=(snapshot.val() && snapshot.val().FirstName)+" "+(snapshot.val() && snapshot.val().LastName);
@@ -51,7 +43,7 @@
   //  var city=(snapshot.val() && snapshot.val().City);
   //  var state=(snapshot.val() && snapshot.val().State);
   //  var dob=(snapshot.val() && snapshot.val().DOB);
-   document.getElementById('displayNameHolder').innerHTML=name;
+  
   //  document.getElementById('lname').innerHTML=lname;
   //  document.getElementById('phone').innerHTML=tele;
   //  document.getElementById('address').innerHTML=address;
@@ -63,7 +55,7 @@
   const auth = firebase.auth();
   const logOut = document.getElementById('logOut');
   logOut.addEventListener('click', () => {
-    //signOut() is a built in firebase function responsible for signing a user out
+  
     auth.signOut()
     .then(() => {
         window.location.assign('/Saada-Hack/signin.html');
@@ -72,7 +64,17 @@
         console.error(error);
     })
 })
-
+auth.onAuthStateChanged(user => {
+    console.log(user);
+    //display the displayName and photoURL of the user on the page
+    if(user.displayName)
+        displayNameHolder.innerText = user.displayName;
+    if(user.photoURL)
+        photoHolder.setAttribute('src', user.photoURL);
+})
+modifyAccount.addEventListener('click', () => {
+    window.location.assign('./edit.html');
+});
  </script>
  
 </body>

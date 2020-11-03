@@ -175,7 +175,7 @@ label {
           <fieldset>
             <div>
               <img src="./assets/images/reset.svg">
-              <!--https://www.visualpharm.com/free-icon-->
+            
             </div>
             <div>
               <label for="mail">Email</label> <br>
@@ -193,6 +193,56 @@ label {
         <p class="feedbackMessage">Signing up failed</p>
       </div>
     </main> 
-    <script src="./js/reset.js"></script>   
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
+    <script>
+    var firebaseConfig = {
+     apiKey: "AIzaSyAs5tsHHmTFBKjTRSoJS42OJC13helmTq0",
+     authDomain: "saadahack.firebaseapp.com",
+     databaseURL: "https://saadahack.firebaseio.com",
+     projectId: "saadahack",
+     storageBucket: "saadahack.appspot.com",
+     messagingSenderId: "702033344107",
+     appId: "1:702033344107:web:01424d2231f7671e30632e",
+     measurementId: "G-D6K461P8SK"
+   };
+  
+   firebase.initializeApp(firebaseConfig);
+   const mailField = document.getElementById('mail');
+const labels = document.getElementsByTagName('label');
+const resetPassword = document.getElementById('resetPassword');
+const successModal = document.querySelector('.success');
+const failureModal = document.querySelector('.failure');
+
+const auth = firebase.auth();
+
+
+auth.useDeviceLanguage();
+
+const resetPasswordFunction = () => {
+    const email = mailField.value;
+
+    auth.sendPasswordResetEmail(email)
+    .then(() => {
+        console.log('Password Reset Email Sent Successfully!');
+    })
+    .catch(error => {
+        console.error(error);
+    })
+}
+
+
+resetPassword.addEventListener('click', resetPasswordFunction);
+
+mailField.addEventListener('focus', () => {
+    labels.item(0).className = "focused-field";
+});
+
+mailField.addEventListener('blur', () => {
+    if(!mailField.value)
+        labels.item(0).className = "unfocused-field";
+});
+  </script>   
   </body>
 </html>

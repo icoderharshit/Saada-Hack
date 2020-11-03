@@ -5,7 +5,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
       <title>Edit</title>
-      <!-- <link rel="shortcut icon" href="favicon.png" type="image/x-icon"> -->
+    
       <link rel="stylesheet" href="./assets/css/edit.css">
   </head>
   <body>
@@ -14,7 +14,7 @@
         <fieldset>
           <div>
             <img src="./assets/images/edit.svg">
-       
+         
           </div>
           <div>
             <label for="mail">Email</label> <br>
@@ -32,7 +32,9 @@
             <label for="photo">Url of picture</label> <br>
             <input type="url" id="photo"/> <br>
           </div>
-          <button id="edit">Confirm</button>   
+          <button id="edit">Confirm</button>
+          <button id="back">Back</button>
+          <button id="delete">Delete Account</button>    
         </fieldset>
       </section>
       <div class="feedbackContainer success">
@@ -43,51 +45,22 @@
         <div class="feedbackIcon"></div>
         <p class="feedbackMessage">Signing up failed</p>
       </div>
-    </main> 
-    <script>
-      const mailField = document.getElementById('mail');
-const passwordField = document.getElementById('password');
-const displayNameField = document.getElementById('displayName');
-const photoField = document.getElementById('photo');
-const labels = document.getElementsByTagName('label');
-const editButton = document.getElementById('edit');
-const deleteButton = document.getElementById('delete');
-
-mailField.addEventListener('focus', () => {
-    labels.item(0).className = "focused-field";
-});
-
-passwordField.addEventListener('focus', () => {
-    labels.item(1).className = "focused-field";
-});
-
-mailField.addEventListener('blur', () => {
-    if(!mailField.value)
-        labels.item(0).className = "unfocused-field";
-});
-
-passwordField.addEventListener('blur', () => {
-    if(!passwordField.value)
-        labels.item(1).className = "unfocused-field";
-});
-
-displayNameField.addEventListener('focus', () => {
-    labels.item(2).className = "focused-field";
-});
-
-photoField.addEventListener('focus', () => {
-    labels.item(3).className = "focused-field";
-});
-
-displayNameField.addEventListener('blur', () => {
-    if(!displayNameField.value)
-        labels.item(2).className = "unfocused-field";
-});
-
-photoField.addEventListener('blur', () => {
-    if(!photoField.value)
-        labels.item(3).className = "unfocused-field";
-});
-    </script>   
+    </main>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
+    <script> var firebaseConfig = {
+      apiKey: "AIzaSyAs5tsHHmTFBKjTRSoJS42OJC13helmTq0",
+      authDomain: "saadahack.firebaseapp.com",
+      databaseURL: "https://saadahack.firebaseio.com",
+      projectId: "saadahack",
+      storageBucket: "saadahack.appspot.com",
+      messagingSenderId: "702033344107",
+      appId: "1:702033344107:web:01424d2231f7671e30632e",
+      measurementId: "G-D6K461P8SK"
+    };
+   
+    firebase.initializeApp(firebaseConfig);</script>
+    <script src="./assets/js/edit.js"></script>
   </body>
 </html>
