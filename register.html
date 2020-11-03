@@ -43,10 +43,10 @@
 </label><br/>
         <label>  Registering as :</label> <br>
        <select>
-        <option class="drop" value="Not Selected">Select</option>
-        <option class="drop" value="Chemist">Chemist</option>
-        <option class="drop" value="Doctor">Doctor</option>
-        <option class="drop" value="Patient">Patient</option>
+        <option name="drop" value="Not Selected">Select</option>
+        <option name="drop" value="Chemist">Chemist</option>
+        <option name="drop" value="Doctor">Doctor</option>
+        <option name="drop" value="Patient">Patient</option>
        </select>
        <br/>
 <label for="email"><input type="email" placeholder="Enter your email" name="email" id="email" required/>
@@ -98,6 +98,7 @@
    var tele=document.getElementById('tele').value;
    var fname=document.getElementById('fname').value;
    var lname=document.getElementById('lname').value;
+   var type=document.getElementsByName('drop').value;
    var city=document.getElementById('city').value;
    var state=document.getElementById('state').value;
    var dob=document.getElementById('dob').value;
@@ -114,6 +115,7 @@ document.getElementsByName("gender").forEach(function(elm) {
     firebase.database().ref('/Users/'+id).set({
      FirstName:fname,
      LastName:lname,
+     Type:type,
      Phone:tele,
      Address:address,
      Gender:selectedGender,
