@@ -2,17 +2,28 @@
 <html>
 <head>
  <title></title>
+ <link rel="stylesheet" href="./assets/css/profile.css">
 </head>
 <body>
  <h1>Profile Of User</h1>
-<h3 id="fname"></h3>
+<!-- <h3 id="fname"></h3>
 <h3 id="lname"></h3>
 <h3 id="phone"></h3>
 <h3 id="address"></h3>
 <h3 id="gender"></h3>
 <h3 id="city"></h3>
 <h3 id="state"></h3>
-<h3 id="dob"></h3>
+<h3 id="dob"></h3> -->
+<section class="container profile-container">
+  <div>  
+    <p>Welcome :</p>
+    <p id="displayNameHolder"></p>
+    <div><img id ="photoHolder" src="./assets/images/avatar.svg" alt="Profile picture">
+    </div>
+    <button id="logOut">Logout</button>
+    <button id="modifyAccount">Modify Account</button>
+  </div>
+</section>
 <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
@@ -33,24 +44,35 @@
 <script type="text/javascript">
   var userId=localStorage.getItem('id');
   firebase.database().ref('Users/'+userId).on('value',function(snapshot){
-   var fname=(snapshot.val() && snapshot.val().FirstName);
-   var lname=(snapshot.val() && snapshot.val().LastName);
-   var tele=(snapshot.val() && snapshot.val().Phone);
-   var address=(snapshot.val() && snapshot.val().Address);
-   var gender=(snapshot.val() && snapshot.val().Gender);
-   var city=(snapshot.val() && snapshot.val().City);
-   var state=(snapshot.val() && snapshot.val().State);
-   var dob=(snapshot.val() && snapshot.val().DOB);
-   document.getElementById('fname').innerHTML=fname;
-   document.getElementById('lname').innerHTML=lname;
-   document.getElementById('phone').innerHTML=tele;
-   document.getElementById('address').innerHTML=address;
-   document.getElementById('gender').innerHTML=gender;
-   document.getElementById('city').innerHTML=city;
-   document.getElementById('state').innerHTML=state;
-   document.getElementById('dob').innerHTML=dob;
+   var name=(snapshot.val() && snapshot.val().FirstName)+" "+(snapshot.val() && snapshot.val().LastName);
+  //  var tele=(snapshot.val() && snapshot.val().Phone);
+  //  var address=(snapshot.val() && snapshot.val().Address);
+  //  var gender=(snapshot.val() && snapshot.val().Gender);
+  //  var city=(snapshot.val() && snapshot.val().City);
+  //  var state=(snapshot.val() && snapshot.val().State);
+  //  var dob=(snapshot.val() && snapshot.val().DOB);
+   document.getElementById('displayNameHolder').innerHTML=name;
+  //  document.getElementById('lname').innerHTML=lname;
+  //  document.getElementById('phone').innerHTML=tele;
+  //  document.getElementById('address').innerHTML=address;
+  //  document.getElementById('gender').innerHTML=gender;
+  //  document.getElementById('city').innerHTML=city;
+  //  document.getElementById('state').innerHTML=state;
+  //  document.getElementById('dob').innerHTML=dob;
   });
- 
+  const auth = firebase.auth();
+  const logOut = document.getElementById('logOut');
+  logOut.addEventListener('click', () => {
+    //signOut() is a built in firebase function responsible for signing a user out
+    auth.signOut()
+    .then(() => {
+        window.location.assign('/Saada-Hack/signin.html');
+    })
+    .catch(error => {
+        console.error(error);
+    })
+})
+
  </script>
  
 </body>
