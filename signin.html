@@ -13,7 +13,7 @@
         }
      
 #box{
-    height:430px;
+    height:450px;
     width: 450px;
     background-color:rgb(255, 255, 255);
     margin-right: auto;
@@ -107,9 +107,17 @@ input[type="password"]:focus{
     outline: none;
     border-bottom: 1px solid #f84949;
 }
+#newacc{
+    font-size: 14px;
+ font-family: "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif;
+ font-weight:400;
+}
 
 a{
     text-decoration: none;
+}
+#forgot:hover,#newacc:hover{
+    text-decoration: underline;
 }
     </style>
 </head>
@@ -142,10 +150,13 @@ a{
         <option class="drop" value="Doctor">Doctor</option>
         <option class="drop" value="Patient">Patient</option>
        </select>
-       <br>
-        <div id="forgot"><a href="./reset.html" style="   color: rgb(109, 106, 106);">
-        Forgot password ?</a>
-        </div>
+       <br/>
+        <span id="newacc"><a href="./register.html" style="   color: rgb(109, 106, 106);">
+        Don't have an account yet ?</a>
+        </span>
+        <span id="forgot"><a href="./reset.html" style="   color: rgb(109, 106, 106);">
+            Forgot password ?</a>
+        </span>
     </div>
         <div id="button">
         <button onclick="LoginUser()"> Sign In</button></div>

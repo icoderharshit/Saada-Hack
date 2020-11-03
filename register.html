@@ -66,7 +66,7 @@
      appId: "1:702033344107:web:01424d2231f7671e30632e",
      measurementId: "G-D6K461P8SK"
    };
-   // Initialize Firebase
+  
    firebase.initializeApp(firebaseConfig);
 
    function RegisterUser() {
@@ -87,7 +87,7 @@ document.getElementsByName("gender").forEach(function(elm) {
 });
 
    firebase.auth().createUserWithEmailAndPassword(email,password).then(function(){
-    alert('User Registered successfully');
+    
     var id=firebase.auth().currentUser.uid;
     firebase.database().ref('/Users/'+id).set({
      FirstName:fname,
@@ -99,7 +99,7 @@ document.getElementsByName("gender").forEach(function(elm) {
      State:state,
      DOB:dob
     });
-
+    sendVerificationEmail();
 
 
    }).catch(function(error){
@@ -108,6 +108,33 @@ document.getElementsByName("gender").forEach(function(elm) {
     var errormsg=error.message;
 
    });
+
+   const auth = firebase.auth();
+
+auth.useDeviceLanguage();
+
+const sendVerificationEmail = () => {
+   
+    auth.currentUser.sendEmailVerification()
+    .then(() => {
+      alert('Verification Email Sent Successfully, please check and sign in !'); 
+     
+      
+    })
+    .catch(error => {
+        console.error(error);
+    })
+};
+
+
+
+auth.onAuthStateChanged(user => {
+    if(user && (state === 0))
+        window.location.assign('./profile.html');
+})
+
+
+
   }
  
  </script>
