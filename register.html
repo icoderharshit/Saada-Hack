@@ -8,6 +8,21 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="stylesheet" href="/Saada-Hack/assets/css/style.css">
 </head>
+<style>
+  select{
+    padding-left: 12px;
+    background-color: rgb(247, 247, 247);
+    border : wheat;
+    width: 600px;
+ margin-top: 12px ;
+ margin-bottom: 12px ;
+    height: 44px;
+    border-radius:5px;
+    font-size: 15px;
+    font-weight: 500;
+    color: rgb(109, 106, 106);
+}
+</style>
 <body style="background-color: #FFCAD4;">
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb bg-transparent" class="path-nav">
@@ -26,7 +41,14 @@
 </label><br/>
 <label for="lname"><input type="text" placeholder="Last Name" name="lname" id="lname" required/>
 </label><br/>
-
+        <label>  Registering as :</label> <br>
+       <select>
+        <option class="drop" value="Not Selected">Select</option>
+        <option class="drop" value="Chemist">Chemist</option>
+        <option class="drop" value="Doctor">Doctor</option>
+        <option class="drop" value="Patient">Patient</option>
+       </select>
+       <br/>
 <label for="email"><input type="email" placeholder="Enter your email" name="email" id="email" required/>
 </label><br/>
 <label for="email"><input type="password" placeholder="Enter your password" name="password" id="password" required/>

@@ -53,7 +53,7 @@ const changeNameAndPhoto = (user, newNameAndPhoto) => {
             photoURL: newPhotoURL
         })
             .then(() => {
-                console.log('Profile Updated Successfully !');
+                alert('Profile Updated Successfully !');
             })
             .catch(error => {
                 console.error(error);
@@ -64,7 +64,7 @@ const changeNameAndPhoto = (user, newNameAndPhoto) => {
             displayName: newDisplayName
         })
             .then(() => {
-                console.log('Display Name Updated Successfully !');
+                alert('Display Name Updated Successfully !');
             })
             .catch(error => {
                 console.error(error);
@@ -75,7 +75,7 @@ const changeNameAndPhoto = (user, newNameAndPhoto) => {
             photoURL: newPhotoURL
         })
             .then(() => {
-                console.log('PhotoURL Updated Successfully !');
+                alert('PhotoURL Updated Successfully !');
             })
             .catch(error => {
                 console.error(error);
@@ -98,7 +98,7 @@ const changePassword = (user, credential, newPassword) => {
     user.reauthenticateWithCredential(credential)
         .then(() => {
             user.updatePassword(newPassword);
-            console.log('Password Updated!');
+            alert('Password Updated!');
         })
         .catch(error => {
             console.error(error);
@@ -109,7 +109,7 @@ const changeEmail = (user, credential, newEmail) => {
     user.reauthenticateWithCredential(credential)
         .then(() => {
             user.updateEmail(newEmail);
-            console.log('Email Updated!');
+            alert('Email Updated!');
         })
         .catch(error => {
             console.error(error);
@@ -124,7 +124,6 @@ const deleteAccount = () => {
             user.delete();
             alert("Your Account Has Been Deleted!");
             window.location('/Saada-Hack/index.html');
-            console.log('Your Account Has Been Deleted!');
         })
         .catch(error => {
             console.error(error);
