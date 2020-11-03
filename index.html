@@ -308,14 +308,15 @@ footer{
 
 <div id="contact">
   <form > <h1 class="h2-responsive text-center contact-heading">How can we <span style="color: #f84949;font-weight:bolder;">Help you?</span></h1>
-   <input type="text" placeholder="Name" class="contact-data" required/><br/>
+   <input type="text" placeholder="Name" class="contact-data" id="username" required/><br/>
    <input type="email" placeholder="Email" class="contact-data" required/>
    <br/>
    <label for="address"><textarea type="text" placeholder="Message" class="contact-data2" required></textarea>
    </label>
    <br/>
-   <button>Send</button>
+   <button onclick="send()">Send</button>
  </form>
+ <p id="thanks"></p>
  </div>
  <div style="margin-bottom: 3%;margin-top: 9%;">
   <h1 class="h1-responsive text-center" style="font-size: 60px;">Our Team</h1>
