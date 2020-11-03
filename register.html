@@ -87,7 +87,7 @@ document.getElementsByName("gender").forEach(function(elm) {
 });
 
    firebase.auth().createUserWithEmailAndPassword(email,password).then(function(){
-    alert('User Registered successfully');
+    
     var id=firebase.auth().currentUser.uid;
     firebase.database().ref('/Users/'+id).set({
      FirstName:fname,
@@ -99,7 +99,7 @@ document.getElementsByName("gender").forEach(function(elm) {
      State:state,
      DOB:dob
     });
-
+    sendVerificationEmail();
 
 
    }).catch(function(error){
@@ -117,9 +117,9 @@ const sendVerificationEmail = () => {
    
     auth.currentUser.sendEmailVerification()
     .then(() => {
-        console.log('Verification Email Sent Successfully !');
+      alert('Verification Email Sent Successfully !'); 
+     
       
-        window.location.assign('./profile.html');
     })
     .catch(error => {
         console.error(error);
